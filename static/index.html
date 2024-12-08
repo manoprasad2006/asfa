@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Spoof Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        #video-container {
+            position: relative;
+            max-width: 640px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        #video-feed {
+            max-width: 100%;
+            width: 100%;
+        }
+        #prediction {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Face Spoof Detection</h1>
+    <div id="video-container">
+        <img id="video-feed" src="/video_feed" alt="Video Feed">
+        <div id="prediction">Prediction: Waiting...</div>
+    </div>
+
+    <script>
+        // Get the video element
+        const videoElement = document.getElementById('video-feed');
+        const predictionEl = document.getElementById('prediction');
+
+        // Set the video feed source to the backend URL
+        videoElement.src = '/video_feed';
+    </script>
+</body>
+</html>
+1
