@@ -18,7 +18,7 @@ session = ort.InferenceSession(onnx_model_path)
 input_name = session.get_inputs()[0].name
 
 # Initialize OpenCV for video capture
-video_capture = cv2.VideoCapture(1,cv2.CAP_DSHOW)
+video_capture = cv2.VideoCapture(1,cv2.CAP_V4L2)
 
 def generate_frames():
     global video_capture
